@@ -12,7 +12,6 @@
     <label for="search">Поиск</label>
     <input type="text" v-model="search" v-on:change="searchJokes(search)" class="search" id="search">
     <p>Search for: {{ search }}</p>
-    <p>{{ request }}</p>
     <div class="list">
         <div class="joke" v-if="visible" v-for="joke in jokes">
             <p>{{ joke.text }}</p>

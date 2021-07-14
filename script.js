@@ -8,10 +8,7 @@ var app = new Vue({
     },
     methods: {
         searchJokes: function (){
-            /*if (!this.search){
-                this.visible = true
-            }
-            this.visible = true*/
+
         }
     }
 })
@@ -22,7 +19,7 @@ function like(){
 
 window.addEventListener('load', ()=>{
     console.log("Loaded!")
-    let url = "https://v2.jokeapi.dev/joke/Misc?amount=10"
+    let url = "https://v2.jokeapi.dev/joke/Misc?amount=10?blacklistFlags=nsfw,racist,sexist,explicit"
     let request = new XMLHttpRequest()
     request.open("GET", url)
     request.setRequestHeader("Content-Type", "application/json")
