@@ -14,7 +14,11 @@ figure img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-basis: 50%;
     border: 1px solid grey;
     margin-bottom: 20px;
     padding: 10px;
+}
+.joke p{
+    flex: 1;
 }

@@ -10,29 +10,17 @@
 
 <div id="app">
     <label for="search">Поиск</label>
-    <input type="text" class="search" id="search">
+    <input type="text" v-model="search" v-on:change="searchJokes(search)" class="search" id="search">
+    <p>Search for: {{ search }}</p>
+    <p>{{ request }}</p>
     <div class="list">
-        <div class="joke" v-for="joke in jokes">
+        <div class="joke" v-if="visible" v-for="joke in jokes">
             <p>{{ joke.text }}</p>
-            <figure v-on:click="like()"><img src="img/Like%20icon.png" alt=""></figure>
+            <figure v-on:click="like(index)"><img src="img/Like%20icon.png" alt=""></figure>
         </div>
     </div>
 </div>
 
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            jokes: [
-                {text: "Ha-ha"},
-                {text: "Ho-ho"}]
-        }
-    })
-    app.jokes.unshift({text: "Hi-hi"})
-
-    function like(){
-
-    }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
